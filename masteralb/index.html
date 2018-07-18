@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>masteralb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
-
-<body>
-    <header class="container__header">
+<body>    
+    <header class="container container--logo">
         <img class="logo" src="images/logoTop.png" alt="logo">
     </header>
     <main class="container__forms">
-        <section class="container__column">
+        <section class="container--column">
             <section class="item">
-                <section class="item__title">
+                <section class="item item__title">
                     <span>Register Form</span>
                 </section>
-                <form class="form__all">
-                    <section class="form__field">
+                <form class="form">
+                    <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Password" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Confirm Password" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Email" required>
                     </section>
-                    <section class="form__field ">
+                    <section class="container form__field">
                         <img src="images/iconLocation.png" alt="iconLocation" required>
                         <select class="field__loaction">
                             <option disabled selected>Your Location</option>
@@ -46,90 +44,106 @@
                             <option value="Gdansk">Gdansk</option>
                         </select>
                     </section>
-                    <section class="form__checkbox">
-                        <input class="field__input--checkbox" type="checkbox" required>
-                        <label class="field__text">
-                            I have read and accept the terms of use
+                    <section class="container form__field--checkbox">
+                        <input class="field__input--checkbox" id="checkbox1" type="checkbox" required >
+                        <label class="field__text" for="checkbox1">
+                        I have read and accept the terms of use
                         </label>
                     </section>
+                    <div class="container form__field--btn">
+                            <button type="submit" value="Sign up" class="btn">Sign up</button> 
+                    </div>                   
                 </form>
             </section>
             <section class="item">
-                <section class="item__title">
+                <section class="item item__title">
                     <span>Send Emial</span>
                 </section>
-                <form class="form__all">
-                    <section class="form__field">
+                <form class="form">
+                    <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Email" required>
                     </section>
-                    <section class="form__field--message">
+                    <section class="container form__field--message">
                         <textarea class="field__textarea" placeholder="Type your message"></textarea>
                     </section>
-                    <section class="form__checkbox">
-                        <input class="field__input--checkbox" type="checkbox" required>
-                        <label class="field__text">
+                    <section class="container form__field--checkbox">
+                        <input class="field__input--checkbox" id="checkbox2" type="checkbox" required>
+                        <label class="field__text" for="checkbox2">
                             Send a copy to my Email
                         </label>
                     </section>
+                    <div class="container form__field--btn">
+                            <button type="submit" value="Sign up" class="btn">Send emial</button> 
+                    </div>
                 </form>
             </section>
         </section>
         <section class="container__column">
             <section class="item">
-                <section class="item__title">
+                <section class="item item__title">
                     <span>Sing In Form</span>
                 </section>
-                <form class="form__all">
-                    <section class="form__field">
+                <form class="form">
+                    <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Password" required>
                     </section>
-                    <section class="form__checkbox">
-                        <input class="field__input--checkbox" type="checkbox" required>
-                        <label class="field__text">
-                            Remember Me
-                        </label>
+                    <section class="container form__field--checkbox">
+                        <div class="container form__field--checkbox form__field--small">
+                                <input class="field__input--checkbox" id="checkbox3" type="checkbox" required>
+                                <label class="field__text" for="checkbox3">
+                                    Remember Me
+                                </label>
+                        </div>
+                        <div class="container form__field--checkbox form__field--small">
+                                <button type="submit" value="Sign up" class="btn">Send emial</button>
+                        </div>
+                        
+                        
                     </section>
                 </form>
             </section>
             <section class="item">
-                <section class="item__title">
+                <section class="item item__title">
                     <span>Recovery form</span>
                 </section>
-                <form class="form__all">
-                    <section class="form__field">
+                <form class="form">
+                    <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Enter your Email" required>
                     </section>
-                    <section class="form__field">
+                    <section class="container form__field">
                         <img src="images/iconPhone.png" alt="iconPhone">
                         <input class="field__input" type="text" placeholder="Enter your Phone number" required>
                     </section>
                 </form>
             </section>
             <section class="item">
-                <section class="item__title">
+                <section class="item item__title">
                     <span>Subscribe form</span>
                 </section>
-                <form class="form__all">
-                    <section class="form__field">
+                <form class="form">
+                    <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="emial" placeholder="Enter your Email" required>
                     </section>
                 </form>
             </section>
-            <section class="item">
-                <img class="logo" src="images/logoDown.png" alt="logoDown">
+            <section class="container container--logo">
+                    <section class="item">
+                            <img class="logo" src="images/logoDown.png" alt="logoDown">
+                    </section>
             </section>
+            
         </section>
     </main>
 </body>
