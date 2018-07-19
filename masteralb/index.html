@@ -18,7 +18,7 @@
                 <section class="item item__title">
                     <span>Register Form</span>
                 </section>
-                <form class="form">
+                <form class="form" action="">
                     <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
@@ -47,7 +47,7 @@
                     <section class="container form__field--checkbox">
                         <input class="field__input--checkbox" id="checkbox1" type="checkbox" required >
                         <label class="field__text" for="checkbox1">
-                        I have read and accept the terms of use
+                        I have read and accept the terms of use.
                         </label>
                     </section>
                     <div class="container form__field--btn">
@@ -59,7 +59,7 @@
                 <section class="item item__title">
                     <span>Send Emial</span>
                 </section>
-                <form class="form">
+                <form class="form" action="">
                     <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
@@ -78,17 +78,17 @@
                         </label>
                     </section>
                     <div class="container form__field--btn">
-                            <button type="submit" value="Sign up" class="btn">Send emial</button> 
+                            <button type="submit" value="Send email" class="btn">Send emial</button> 
                     </div>
                 </form>
             </section>
         </section>
-        <section class="container__column">
+        <section class="container--column">
             <section class="item">
                 <section class="item item__title">
                     <span>Sing In Form</span>
                 </section>
-                <form class="form">
+                <form class="form" action="">
                     <section class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
@@ -97,15 +97,15 @@
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Password" required>
                     </section>
-                    <section class="container form__field--checkbox">
-                        <div class="container form__field--checkbox form__field--small">
+                    <section class="container form__field--btn">
+                        <div class="container form__field--small">
                                 <input class="field__input--checkbox" id="checkbox3" type="checkbox" required>
                                 <label class="field__text" for="checkbox3">
                                     Remember Me
                                 </label>
                         </div>
-                        <div class="container form__field--checkbox form__field--small">
-                                <button type="submit" value="Sign up" class="btn">Send emial</button>
+                        <div class="container form__field--small">
+                                <button type="submit" value="Send email" class="btn">Sign in</button>
                         </div>
                         
                         
@@ -116,7 +116,7 @@
                 <section class="item item__title">
                     <span>Recovery form</span>
                 </section>
-                <form class="form">
+                <form class="form" action="">
                     <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Enter your Email" required>
@@ -125,16 +125,36 @@
                         <img src="images/iconPhone.png" alt="iconPhone">
                         <input class="field__input" type="text" placeholder="Enter your Phone number" required>
                     </section>
+                    <section class="container form__field--btn">
+                        <div class="container form__field--small">
+                            <button type="submit" value="Send" class="btn btn--left">Send</button>
+                        </div>
+                        <div class="container form__field--small">
+                                <button type="submit" value="Done" class="btn btn--right" disabled>Done</button>
+                        </div>
+                        
+                        
+                    </section>
                 </form>
             </section>
             <section class="item">
                 <section class="item item__title">
                     <span>Subscribe form</span>
                 </section>
-                <form class="form">
+                <form class="form" action="">
                     <section class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="emial" placeholder="Enter your Email" required>
+                    </section>
+                    <section class="container form__field--btn">
+                        <div class="container form__field--small">
+                            <button type="submit" value="Send" class="btn btn--left">Subscribe</button>
+                        </div>
+                        <div class="container form__field--small">
+                                <button type="submit" value="Done" class="btn btn--right btn--disagree" disabled>No, thanks</button>
+                        </div>
+                        
+                        
                     </section>
                 </form>
             </section>
@@ -147,5 +167,4 @@
         </section>
     </main>
 </body>
-
 </html>
