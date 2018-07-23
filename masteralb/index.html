@@ -8,34 +8,34 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
-<body>    
+<body>
     <header class="container container--logo">
         <img class="logo" src="images/logoTop.png" alt="logo">
     </header>
     <main class="container__forms">
-        <section class="container--column">
+        <div class="container--column">
             <section class="item">
-                <section class="item item__title">
+                <header class="item item__title">
                     <span>Register Form</span>
-                </section>
+                </header>
                 <form class="form" action="">
-                    <section class="container form__field">
+                    <div class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Password" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Confirm Password" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Email" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconLocation.png" alt="iconLocation" required>
                         <select class="field__loaction">
                             <option disabled selected>Your Location</option>
@@ -43,128 +43,121 @@
                             <option value="Warsaw">Warsaw</option>
                             <option value="Gdansk">Gdansk</option>
                         </select>
-                    </section>
-                    <section class="container form__field--checkbox">
-                        <input class="field__input--checkbox" id="checkbox1" type="checkbox" required >
+                    </div>
+                    <div class="container form__field--checkbox">
+                        <input class="field__input--checkbox" id="checkbox1" type="checkbox" required>
                         <label class="field__text" for="checkbox1">
-                        I have read and accept the terms of use.
+                            I have read and accept the terms of use.
                         </label>
-                    </section>
+                    </div>
                     <div class="container form__field--btn">
-                            <button type="submit" value="Sign up" class="btn">Sign up</button> 
-                    </div>                   
+                        <button type="submit" value="Sign up" class="btn">Sign up</button>
+                    </div>
                 </form>
             </section>
             <section class="item">
-                <section class="item item__title">
+                <header class="item item__title">
                     <span>Send Emial</span>
-                </section>
+                </header>
                 <form class="form" action="">
-                    <section class="container form__field">
+                    <div class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Email" required>
-                    </section>
-                    <section class="container form__field--message">
+                    </div>
+                    <div class="container form__field--message">
                         <textarea class="field__textarea" placeholder="Type your message"></textarea>
-                    </section>
-                    <section class="container form__field--checkbox">
+                    </div>
+                    <div class="container form__field--checkbox">
                         <input class="field__input--checkbox" id="checkbox2" type="checkbox" required>
                         <label class="field__text" for="checkbox2">
                             Send a copy to my Email
                         </label>
-                    </section>
+                    </div>
                     <div class="container form__field--btn">
-                            <button type="submit" value="Send email" class="btn">Send emial</button> 
+                        <button type="submit" value="Send email" class="btn">Send emial</button>
                     </div>
                 </form>
             </section>
-        </section>
-        <section class="container--column">
+        </div>
+        <div class="container--column">
             <section class="item">
-                <section class="item item__title">
+                <header class="item item__title">
                     <span>Sing In Form</span>
-                </section>
+                </header>
                 <form class="form" action="">
-                    <section class="container form__field">
+                    <div class="container form__field">
                         <img src="images/iconUser.png" alt="iconUser">
                         <input class="field__input" type="text" placeholder="Username" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconLock.png" alt="iconLock">
                         <input class="field__input" type="password" placeholder="Password" required>
-                    </section>
-                    <section class="container form__field--btn">
+                    </div>
+                    <div class="container form__field--btn">
                         <div class="container form__field--small">
-                                <input class="field__input--checkbox" id="checkbox3" type="checkbox" required>
-                                <label class="field__text" for="checkbox3">
-                                    Remember Me
-                                </label>
+                            <input class="field__input--checkbox" id="checkbox3" type="checkbox" required>
+                            <label class="field__text" for="checkbox3">
+                                Remember Me
+                            </label>
                         </div>
                         <div class="container form__field--small">
-                                <button type="submit" value="Send email" class="btn">Sign in</button>
+                            <button type="submit" value="Send email" class="btn">Sign in</button>
                         </div>
-                        
-                        
-                    </section>
+                    </div>
                 </form>
             </section>
             <section class="item">
-                <section class="item item__title">
+                <header class="item item__title">
                     <span>Recovery form</span>
-                </section>
+                </header>
                 <form class="form" action="">
-                    <section class="container form__field">
+                    <div class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="email" placeholder="Enter your Email" required>
-                    </section>
-                    <section class="container form__field">
+                    </div>
+                    <div class="container form__field">
                         <img src="images/iconPhone.png" alt="iconPhone">
                         <input class="field__input" type="text" placeholder="Enter your Phone number" required>
-                    </section>
-                    <section class="container form__field--btn">
+                    </div>
+                    <div class="container form__field--btn">
                         <div class="container form__field--small">
                             <button type="submit" value="Send" class="btn btn--left">Send</button>
                         </div>
                         <div class="container form__field--small">
-                                <button type="submit" value="Done" class="btn btn--right" disabled>Done</button>
+                            <button type="submit" value="Done" class="btn btn--right" disabled>Done</button>
                         </div>
-                        
-                        
-                    </section>
+                    </div>
                 </form>
             </section>
             <section class="item">
-                <section class="item item__title">
+                <header class="item item__title">
                     <span>Subscribe form</span>
-                </section>
+                </header>
                 <form class="form" action="">
-                    <section class="container form__field">
+                    <div class="container form__field">
                         <img src="images/iconEmail.png" alt="iconEmail">
                         <input class="field__input" type="emial" placeholder="Enter your Email" required>
-                    </section>
-                    <section class="container form__field--btn">
+                    </div>
+                    <div class="container form__field--btn">
                         <div class="container form__field--small">
                             <button type="submit" value="Send" class="btn btn--left">Subscribe</button>
                         </div>
                         <div class="container form__field--small">
-                                <button type="submit" value="Done" class="btn btn--right btn--disagree" disabled>No, thanks</button>
+                            <button type="submit" value="Done" class="btn btn--right btn--disagree" disabled>No, thanks</button>
                         </div>
-                        
-                        
-                    </section>
+                    </div>
                 </form>
             </section>
             <section class="container container--logo">
-                    <section class="item">
-                            <img class="logo" src="images/logoDown.png" alt="logoDown">
-                    </section>
+                <div class="item">
+                    <img class="logo" src="images/logoDown.png" alt="logoDown">
+                </div>
             </section>
-            
-        </section>
+        </div>
     </main>
 </body>
 </html>
