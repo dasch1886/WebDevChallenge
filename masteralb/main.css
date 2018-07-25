@@ -132,10 +132,13 @@ body {
   padding: 10px;
 }
 
+.btn:focus,
+.field__input--checkbox:focus,
+.form__field:focus-within,
+.form__field--message:focus-within,
 .form__field:hover,
 .form__field--message:hover {
-  border: 1px solid #2dce18;
-  outline: none;
+  border: 1px solid #89abe2;
 }
 
 .form__field--checkbox {
@@ -195,11 +198,14 @@ body {
 }
 
 .field__location {
-  width: 80%;
-  border: none;
+  width: 100%;
+  height: 100%;
+  border: 0px none;
   outline: none;
   color: #afafaf;
-  margin-left: 20px;
+  padding-left: 10px;
+  margin-left:10px;
+  box-shadow: none;
 }
 
 .field__input {
@@ -245,6 +251,7 @@ body {
   font-weight: 400;
   font-size: 1.4rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  outline: none;
 }
 
 .btn:hover{
