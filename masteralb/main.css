@@ -123,6 +123,17 @@ body {
           transform: translate(0%, -50%);
 }
 
+.form__field--password{
+  font-family: "Font Awesome 5 Free";  
+  color: #c6c6c6;
+  font-size: 20px;
+  margin-right:10px;
+}
+
+.form__field--password:hover{
+  color: #89abe2;
+}
+
 .form__field--message {
   margin: 10px;
   width: 330px;
@@ -284,6 +295,32 @@ body {
   background: linear-gradient(#f29b9b, #af1919e5);
 }
 
+.error,
+.error:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  border-color: #af1919e5;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 
 
 @media screen and (max-width: 480px) {
