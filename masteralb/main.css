@@ -307,7 +307,7 @@ body {
           backface-visibility: hidden;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  border-color: #af1919e5;
+  border: 1px solid #af1919e5;
 }
 
 @-webkit-keyframes shake {
