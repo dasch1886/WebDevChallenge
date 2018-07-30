@@ -218,6 +218,7 @@ body {
   margin-left:10px;
   -webkit-box-shadow: none;
           box-shadow: none;
+  background-color: white; 
 }
 
 .field__input {
