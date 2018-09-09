@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/solid.css" integrity="sha384-g2aKxiZcFezoVOq4MsjaxuBbSxSlXD/NRQ5GaPLfvCtcTLgP3fYZKKAGxCM/wMfe"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/fontawesome.css" integrity="sha384-xdTUmhbcetyLRVL4PAriRajOve+/5pjOiy5sJABnhXMcRMVc9HI9s2KmOCjjDK/P"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form class="container--middle" id="task-creator">
+            <div class="box--2col">
+                <div class="box box__item--center">
+                    <label class="item__title">Title:</label>
+                </div>
+                <div class="box box__item--center">
+                    <input class="item__input" type="text" name="title">
+                </div>
+                <div class="box box__item--center">
+                    <label class="item__title">Category:</label>
+                </div>
+                <div class="box box__item--center">
+                    <div class="select__dropdown">
+                        <select class="item__select">
+                            <option disabled selected>Select</option>
+                            <option>House</option>
+                            <option>Work</option>
+                            <option>Children</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box box__item--center">
+                    <span class="item__title">Content task:</span>
+                </div>
+                <div class="box">
+                    <textarea class="item__textarea" name="task-content"></textarea>
+                </div>
+                <div class="box box__item--right">
+                    <button type="submit" class="btn item__btn">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+        <section class="container--right">
+            <div class="box--3row">
+                <div class="box box__item--center">
+                    <span class="item__title">Category</span>
+                </div>
+                <div class="box box__item--center">
+                    <ul class="item__list">
+                        <li class="list__option">
+                            <span class="list__option--counter">(0)</span>House
+                        </li>
+                        <li class="list__option">
+                            <span class="list__option--counter">(0)</span>
+                            Work
+                        </li>
+                        <li class="list__option">
+                            <span class="list__option--counter">(0)</span>
+                            Children
+                        </li>
+                    </ul>
+                </div>
+                <div class="box--2col">
+                    <div class="box box__item--center">
+                        <button class="btn item__btn">Add</button>
+                    </div>
+                    <div class="box box__item--center">
+                        <button class="btn item__btn item__btn--remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="container--middle">
+            <div class="box--2col">
+                <div class="box box__item--center">
+                    <span class="item__title">Search task</span>
+                </div>
+                <div class="box">
+                    <input class="item__input" type="text">
+                </div>
+            </div>
+            <section class="task-list">
+                <div class="box item__task">
+                    <div class="task__header">
+                        <div>1 January 2018</div>
+                        <div>Category: House</div>
+                    </div>
+                    <div class="task__content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mauris risus, imperdiet sit amet
+                        magna vel, viverra aliquam mi. Vestibulum sollicitudin turpis tempus, ultricies mauris ut,
+                        porttitor dolor. Nullam ut ipsum in sem tristique ultricies vel sed lacus. Aenean eget sagittis
+                        eros, non varius dolor. Praesent quis bibendum dui. Integer fermentum augue massa, a congue
+                        orci sodales a. Etiam tortor sem, congue ut sapien in, tempus semper nibh.
+                    </div>
+                </div>
+                <div class="box item__task">
+                    <div class="task__header">
+                        <div>9 December 2018</div>
+                        <div>Category: Work</div>
+                        <div>Title: </div>
+                    </div>
+                    <div class="task__content">
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
