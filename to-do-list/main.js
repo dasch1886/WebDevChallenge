@@ -36,17 +36,12 @@ let getDate = function(date) {
   return fulldate;
 };
 
-console.log(document.querySelectorAll('.task__header:before'));
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
   const taskCreator = document.querySelector("#task-creator");
   const input = this.querySelector("input");
   const textarea = this.querySelector("textarea");
   const select = this.querySelector("select");
   const taskList = document.querySelector(".task-list");
-  console.dir(select);
 
   taskCreator.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -70,6 +65,13 @@ document.addEventListener("DOMContentLoaded", function() {
       for (let i = 0; i < 3; i++) {
         divHeader.appendChild(document.createElement("div"));
       }
+      let i = document.createElement("i");
+      i.classList.add("fas");
+      i.classList.add("fa-times");
+      i.classList.add("task__close");
+
+      divHeader.appendChild(i);
+
 
       divHeader.children[0].textContent = task.date;
       divHeader.children[1].textContent = "Category: " + task.category;
@@ -85,8 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
       taskList.appendChild(div);
 
       Tasks.push(task);
-      console.log(Tasks);
-      console.log(input.value, select.value, textarea.value);
     }
   });
 
