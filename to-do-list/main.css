@@ -208,6 +208,7 @@
     font-size: 28px;
     color: #f22626;
     position: absolute;
+    cursor: pointer;
     font-style: normal;
     top: 5px;
     right: -10px;
