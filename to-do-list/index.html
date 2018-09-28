@@ -53,7 +53,7 @@
                 </div>
             </div>
         </form>
-        <section class="container--right">
+        <section class="container--right" id="category">
             <div class="box--3row">
                 <div class="box box__item--center">
                     <span class="item__title">Category</span>
@@ -61,15 +61,25 @@
                 <div class="box box__item--center">
                     <ul class="item__list">
                         <li class="list__option">
-                            <span class="list__option--counter">(0)</span>House
+                            <!-- <div>
+                                <input type="checkbox" class="item__input--checkbox">
+                            </div> -->
+                            <label for="House">
+                                    <span class="list__option--counter">(0)</span>
+                                    <span class="categoryName">House</span>
+                            </label>                           
                         </li>
                         <li class="list__option">
-                            <span class="list__option--counter">(0)</span>
-                            Work
+                            <label for="Work">
+                                    <span class="list__option--counter">(0)</span>
+                                    <span class="categoryName">Work</span>
+                            </label>                            
                         </li>
                         <li class="list__option">
-                            <span class="list__option--counter">(0)</span>
-                            Children
+                            <label for="Children">
+                                    <span class="list__option--counter">(0)</span>
+                                    <span class="categoryName">Children</span>
+                            </label>                            
                         </li>
                     </ul>
                 </div>
@@ -81,6 +91,15 @@
                         <button class="btn item__btn item__btn--remove">Remove</button>
                     </div>
                 </div>
+                <section id="addCategory" class="container__addCategory--inactive">
+                    <div class="box box__item--center ">
+                        <input class="item__input" type="text" name="title">
+                    </div>
+                    <div class="box box__item--right">
+                        <button class="btn item__btn">OK</button>
+                    </div>   
+                </section>
+                                             
             </div>
         </section>
         <main class="container--middle">
