@@ -28,7 +28,7 @@ let Task = function(title, category, value, date) {
   this.setDate(date);
 };
 
-Task.prototype.setId = function(){
+Task.prototype.setId = function() {
   if (id.length === 0) {
     this.id = 1;
     id.push(this.id);
@@ -49,11 +49,7 @@ Task.prototype.setDate = function(date) {
       date.getFullYear();
   } else {
     this.date =
-      date.getDate() +
-      " " +
-      months[date.getMonth()] +
-      " " +
-      date.getFullYear();
+      date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   }
 };
 
@@ -155,6 +151,10 @@ document.addEventListener("DOMContentLoaded", function() {
       categories.push(input.value);
       const li = document.createElement("li");
       const label = document.createElement("label");
+      const option = document.createElement("option");
+      option.value = input.value;
+      option.textContent = input.value;
+      select.appendChild(option);
       label.htmlFor = input.value;
       li.classList.add("list__option");
       label
@@ -172,9 +172,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function removeCategoryFromList() {
+    const btn = section.querySelector(".btn");
     const li = ul.querySelectorAll(".list__option");
+    select.selectedIndex = 0;
     [].filter.call(li, function(e) {
       if (e.firstChild.checked) {
+        for (o of select.options) {
+          if (o.value === e.firstChild.id) {
+            select.removeChild(o);
+          }
+        }
         return e.parentNode.removeChild(e);
       }
     });
