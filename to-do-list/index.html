@@ -17,26 +17,28 @@
 
 <body>
     <div class="container">
-        <form class="container--middle" id="task-creator">
+        <section class="container--middle" id="task-creator">
             <div class="box--2col">
                 <div class="box box__item--center">
                     <label class="item__title">Title:</label>
                 </div>
                 <div class="box box__item--center">
-                    <input class="item__input" type="text" name="title">
+                    <input class="item__input" type="text" name="title" />
+                    <span class="item__error"></span>
                 </div>
                 <div class="box box__item--center">
                     <label class="item__title">Category:</label>
                 </div>
                 <div class="box box__item--center">
                     <div class="select__dropdown">
-                        <select class="item__select">
+                        <select class="item__select" required>
                             <option disabled selected>Select</option>
                             <option>House</option>
                             <option>Work</option>
                             <option>Children</option>
-                        </select>
+                        </select>                        
                     </div>
+                    <span class="item__error"></span>
                 </div>
             </div>
             <div class="box">
@@ -45,14 +47,15 @@
                 </div>
                 <div class="box">
                     <textarea class="item__textarea" name="task-content"></textarea>
+                    <span class="item__error"></span>
                 </div>
                 <div class="box box__item--right">
-                    <button type="submit" class="btn item__btn">
+                    <button type="button" class="btn item__btn">
                         Add
                     </button>
                 </div>
             </div>
-        </form>
+        </section>
         <section class="container--right" id="category">
             <div class="box--3row">
                 <div class="box box__item--center">
@@ -89,14 +92,14 @@
                     </div>
                 </div>
                 <section id="addCategory" class="container__addCategory--inactive">
-                    <div class="box box__item--center ">
-                        <input class="item__input" type="text" name="title">
-                    </div>
-                    <div class="box box__item--right">
-                        <button class="btn item__btn">OK</button>
-                    </div>
+                        <div class="box box__item--center ">
+                            <input class="item__input" type="text"/>
+                        </div>
+                        <span class="item__error"></span>
+                        <div class="box box__item--right">
+                            <button type="button" class="btn item__btn">OK</button>
+                        </div>
                 </section>
-
             </div>
         </section>
         <main class="container--middle">

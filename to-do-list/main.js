@@ -69,6 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const select = taskCreator.querySelector("select");
   const taskList = document.querySelector(".task-list");
   const taskCategory = document.querySelector("#category");
+  const titleRegExp = /(?!^\d+$)^[\w\s\:-]{3,20}$/;
+  const spaceRegExp = /\S+/;
+  const categoryNameRegExp = /(?!^\d+$)^[\w\s\:-]{3,10}$/;
+  const spaceAndDigits = /^[\d\s]+$/;
+
   categories = [].map.call(
     taskCategory.querySelectorAll(".categoryName"),
     function(e) {
@@ -76,13 +81,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   );
   //add tasks to list
-  taskCreator.addEventListener("submit", function(e) {
-    e.preventDefault();
-
+  taskCreator.querySelector('button').addEventListener("click", function(e) {
+    const errors = taskCreator.querySelectorAll('.item__error');
     if (
       input.value !== "" &&
       select.value !== "Select" &&
-      textarea.value !== ""
+      textarea.value !== "" &&
+      spaceRegExp.test(textarea.value) &&
+      spaceRegExp.test(input.value) &&
+      titleRegExp.test(input.value)
     ) {
       tasks.push(
         new Task(input.value, select.value, textarea.value, new Date())
@@ -121,6 +128,25 @@ document.addEventListener("DOMContentLoaded", function() {
       div.appendChild(divContent);
 
       taskList.appendChild(div);
+      select.selectedIndex = 0;
+      input.value = "";
+      textarea.value = "";
+      [].forEach.call(errors,function(e){
+        e.textContent="";
+      });
+    }else if(input.value === "" || !spaceRegExp.test(input.value)){
+      errors[0].textContent = "Can't be empty.";
+    }else if(spaceAndDigits.test(input.value)){
+      errors[0].textContent = "Title can't contain only digits or space.";
+    }else if(!titleRegExp.test(input.value)){
+      errors[0].textContent = "Must have between 3 and 20 characters.";
+    }
+    else if(select.selectedIndex === 0){
+      errors[0].textContent ="";
+      errors[1].textContent = "Choose category.";
+    }else if(textarea.value === "" || !spaceRegExp.test(textarea.value)){
+      errors[1].textContent ="";
+      errors[2].textContent = "Can't be empty.";      
     }
   });
 
@@ -144,10 +170,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const btnRemove = taskCategory.querySelector(".item__btn--remove");
   const ul = taskCategory.querySelector(".item__list");
   const section = taskCategory.querySelector("#addCategory");
+  console.dir(ul);
+
+  section.style.setProperty("display", "none");
 
   function addCategoryToList() {
     const input = section.querySelector("input");
-    if (input.value !== "" && checkCategory(input.value)) {
+    const error = section.querySelector(".item__error");
+    if (
+      input.value !== "" &&
+      checkCategory(input.value) &&
+      spaceRegExp.test(input.value) &&
+      categoryNameRegExp.test(input.value) &&
+      ul.childElementCount < 10
+    ) {
       categories.push(input.value);
       const li = document.createElement("li");
       const label = document.createElement("label");
@@ -167,13 +203,25 @@ document.addEventListener("DOMContentLoaded", function() {
       label.children[1].textContent = input.value;
       li.appendChild(label);
       ul.appendChild(li);
+      error.textContent="";
+      input.value="";
       section.classList.remove("container__addCategory--active");
+      section.style.setProperty("display", "none");
+    }else if( input.value === "" || !spaceRegExp.test(input.value)){
+      error.textContent = "Can't be empty.";
+    }else if(!categoryNameRegExp.test(input.value)){
+      error.textContent = "Category can't contain only digits or space. Must have between 3 and 10 characters.";
+    }else if(!checkCategory(input.value)){
+      error.textContent ="Category exist.";
+    }else{
+      error.textContent ="Can't be more than 10 categories. Please remove.";
     }
   }
 
   function removeCategoryFromList() {
     const btn = section.querySelector(".btn");
     const li = ul.querySelectorAll(".list__option");
+    const input = section.querySelector("input");
     select.selectedIndex = 0;
     [].filter.call(li, function(e) {
       if (e.firstChild.checked) {
@@ -185,9 +233,11 @@ document.addEventListener("DOMContentLoaded", function() {
         return e.parentNode.removeChild(e);
       }
     });
+    [].forEach.call(ul.children, removeCheckbox);
     section.classList.remove("container__addCategory--active");
     input.classList.remove("input__removeCategory--inactive");
     btn.classList.remove("item__btn--remove");
+    section.style.setProperty("display", "none");
   }
 
   function addCheckbox(e) {
@@ -209,6 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
   btnAdd.addEventListener("click", function() {
     const input = section.querySelector("input");
     const btn = section.querySelector(".btn");
+    section.querySelector(".item__error").textContent="";
     if (
       section.classList.contains("container__addCategory--active") &&
       input.classList.contains("input__removeCategory--inactive")
@@ -223,10 +274,13 @@ document.addEventListener("DOMContentLoaded", function() {
     ) {
       //transition from active to hidden
       section.classList.remove("container__addCategory--active");
+      section.style.setProperty("display", "none");
     } else {
       //transition from hidden to acitve
+      section.style.setProperty("display", "");
       section.classList.add("container__addCategory--active");
     }
+
     btn.removeEventListener("click", removeCategoryFromList);
     btn.addEventListener("click", addCategoryToList);
   });
@@ -235,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function() {
   btnRemove.addEventListener("click", function() {
     const input = section.querySelector("input");
     const btn = section.querySelector(".btn");
+    section.querySelector(".item__error").textContent="";
     if (
       section.classList.contains("container__addCategory--active") &&
       !input.classList.contains("input__removeCategory--inactive")
@@ -252,15 +307,16 @@ document.addEventListener("DOMContentLoaded", function() {
       input.classList.remove("input__removeCategory--inactive");
       btn.classList.remove("item__btn--remove");
       [].forEach.call(ul.children, removeCheckbox);
+      section.style.setProperty("display", "none");
     } else {
       //transition from hidden to active
+      section.style.setProperty("display", "");
       section.classList.add("container__addCategory--active");
       input.classList.add("input__removeCategory--inactive");
       btn.classList.add("item__btn--remove");
       [].forEach.call(ul.children, addCheckbox);
     }
-
-    btn.addEventListener("click", removeCategoryFromList);
     btn.removeEventListener("click", addCategoryToList);
+    btn.addEventListener("click", removeCategoryFromList);
   });
 });
