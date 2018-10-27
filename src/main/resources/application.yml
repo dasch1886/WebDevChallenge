@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: your soccer field
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://149.156.136.151:3306"
+    username: "kkopacz"
+    password: "1234567890."
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 800
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8080
