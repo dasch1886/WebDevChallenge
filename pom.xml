@@ -8,8 +8,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>YourSoccerField</name>
-	<description></description>
+    <name>YourSoccerField</name>
+    <description>Idea assumes that, the user registering to our application and loging into it, can book a place, where
+        he can play football.
+    </description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
